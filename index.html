@@ -3,499 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filipino Delight | Modern Filipino-American Cuisine</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Manila to the Boot - Filipino & American Eatery | Bossier City, LA</title>
     <style>
         :root {
-            --primary: #c2410c; /* Warm amber-orange inspired by achuete/sunset */
-            --primary-dark: #9a3412;
-            --secondary: #1e293b;
-            --accent: #d97706;
-            --bg-light: #f8fafc;
-            --text-main: #334155;
-            --white: #ffffff;
-            --transition: all 0.3s ease;
+            --primary-color: #8B0000; /* Deep red for warmth/appetite */
+            --accent-color: #D4AF37;  /* Gold accent */
+            --dark-color: #222222;
+            --light-color: #F9F9F9;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-main);
-            background-color: var(--white);
+            background-color: var(--light-color);
+            color: var(--dark-color);
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4, .brand-font {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Navigation */
         header {
-            position: fixed;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 5%;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
+            z-index: 100;
         }
 
         nav a {
+            color: white;
             text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
+            margin: 0 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--accent-color);
         }
 
-        .nav-btn {
-            background-color: var(--primary);
-            color: var(--white) !important;
-            padding: 0.6rem 1.25rem;
-            border-radius: 50px;
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 3rem 1rem;
         }
 
-        .nav-btn:hover {
-            background-color: var(--primary-dark);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 1rem;
-            margin-top: 4rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            margin-bottom: 2rem;
-            color: #e2e8f0;
-            font-weight: 300;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.85rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 4px 14px rgba(194, 65, 12, 0.3);
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Sections General */
         section {
-            padding: 6rem 10% 4rem;
-        }
-
-        .section-title {
-            text-align: center;
             margin-bottom: 3rem;
         }
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
+        h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
         }
 
-        .section-title p {
-            color: #64748b;
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 8px auto 0;
+        }
+
+        /* About Section */
+        .about-text {
+            text-align: center;
             font-size: 1.1rem;
-        }
-
-        /* About / Story */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.25rem;
-            color: var(--secondary);
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            color: #475569;
-        }
-
-        .about-img img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-            object-fit: cover;
-            height: 400px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
         }
 
         /* Menu Section */
-        .menu-section {
-            background-color: var(--bg-light);
-        }
-
-        .menu-category {
-            margin-bottom: 4rem;
-        }
-
-        .menu-category h3 {
-            font-size: 1.75rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
+        .menu-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .menu-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 0.5rem;
+        }
+
         .menu-item {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .menu-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-
-        .menu-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .menu-details {
-            padding: 1.5rem;
-        }
-
-        .menu-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .menu-header h4 {
-            font-size: 1.25rem;
-            color: var(--secondary);
+        .menu-item-name {
+            font-weight: bold;
         }
 
-        .price {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-
-        .menu-desc {
+        .menu-item-desc {
             font-size: 0.9rem;
-            color: #64748b;
+            color: #666;
+            flex-basis: 100%;
         }
 
-        /* Contact & Hours */
-        .contact-grid {
+        .menu-item-price {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .menu-item-wrapper {
+            margin-bottom: 1.2rem;
+        }
+
+        /* Contact & Info Section */
+        .info-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-            padding: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .info-group {
-            margin-bottom: 2rem;
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
         }
 
-        .info-group h4 {
-            color: var(--secondary);
-            font-size: 1.25rem;
+        .info-box p {
+            color: #555;
             margin-bottom: 0.5rem;
         }
 
-        .info-group p {
-            color: #64748b;
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            background: #e2e8f0;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        /* Footer */
         footer {
-            background-color: var(--secondary);
-            color: #94a3b8;
+            background-color: var(--dark-color);
+            color: white;
             text-align: center;
-            padding: 3rem 5%;
+            padding: 1.5rem;
             font-size: 0.9rem;
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive design */
         @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Add a mobile menu toggle if needed */
-            }
-            .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            section {
-                padding: 4rem 5% 2rem;
-            }
+            header h1 { font-size: 2.2rem; }
+            nav a { margin: 0 0.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header>
-        <a href="#" class="logo">Filipino<span>Delight</span></a>
-        <nav>
-            <ul>
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact & Hours</a></li>
-                <li><a href="#contact" class="nav-btn">Reserve a Table</a></li>
-            </ul>
-        </nav>
+        <h1>Manila to the Boot</h1>
+        <p>Filipino Comfort Food & Southern Hospitality in Bossier City</p>
     </header>
 
-    <!-- Hero Section -->
-    <header class="hero" style="margin-top: 0;"> <!-- overriding top margin for full viewport fit -->
-        <div class="hero-content">
-            <h1>Tradition Meets Modern Flavour</h1>
-            <p>Experience authentic Filipino comfort food elevated with a modern American twist, crafted with heart and heritage.</p>
-            <a href="#menu" class="btn">Explore Our Menu</a>
-        </div>
-    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Hours & Location</a>
+    </nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="about-grid">
-            <div class="about-text">
-                <h3>A Modern Taste of the Philippines</h3>
-                <p>At Filipino Delight, we bridge generational roots and contemporary dining. Born out of a passion for sharing rich island flavors, our dishes honor timeless traditional recipes while embracing vibrant, modern culinary techniques.</p>
-                <p>From slow-braised adobo reductions to crispy, golden lumpia loaded with gourmet fillings, every plate tells a story of family, warmth, and community.</p>
-            </div>
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=800" alt="Fresh modern dishes plating">
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        
+        <section id="about">
+            <h2>Our Story</h2>
+            <p class="about-text">
+                Welcome to Bossier City! We blend the vibrant, savory flavors of traditional Filipino cuisine with the comforting warmth of Louisiana soul. From crispy lumpia to savory adobo paired with southern staples, we bring people together over unforgettable home-cooked meals.
+            </p>
+        </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <div class="section-title">
-            <h2>Our Signature Menu</h2>
-            <p>Carefully curated dishes blending classic island heritage with local favorites</p>
-        </div>
-
-        <!-- Starters / Pica-Pica -->
-        <div class="menu-category">
-            <h3>Pica-Pica (Starters)</h3>
+        <section id="menu">
+            <h2>Our Menu</h2>
             <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&q=80&w=600" alt="Crispy Lumpia" class="menu-img">
-                    <div class="menu-details">
-                        <div class="menu-header">
-                            <h4>Signature Pork Lumpia</h4>
-                            <span class="price">$10</span>
+                
+                <div class="menu-category">
+                    <h3>Filipino Classics</h3>
+                    
+                    <div class="menu-item-wrapper">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Pork Adobo</span>
+                            <span class="menu-item-price">$14.00</span>
                         </div>
-                        <p class="menu-desc">Crispy golden spring rolls packed with seasoned ground pork, water chestnuts, and carrots, served with sweet chili dipping sauce.</p>
+                        <div class="menu-item-desc">Tender pork simmered in garlic, vinegar, and soy sauce, served with garlic rice.</div>
+                    </div>
+
+                    <div class="menu-item-wrapper">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Pancit Bihon</span>
+                            <span class="menu-item-price">$12.00</span>
+                        </div>
+                        <div class="menu-item-desc">Sautéed rice noodles with chicken, pork, and fresh mixed vegetables.</div>
+                    </div>
+
+                    <div class="menu-item-wrapper">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Crispy Lumpia (6 pcs)</span>
+                            <span class="menu-item-price">$8.00</span>
+                        </div>
+                        <div class="menu-item-desc">Filipino-style spring rolls stuffed with seasoned ground pork, served with sweet chili sauce.</div>
                     </div>
                 </div>
 
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600" alt="Ube Cheese Pandesal" class="menu-img">
-                    <div class="menu-details">
-                        <div class="menu-header">
-                            <h4>Ube Cheese Pandesal</h4>
-                            <span class="price">$8</span>
+                <div class="menu-category">
+                    <h3>Fil-Am Fusion & Grill</h3>
+                    
+                    <div class="menu-item-wrapper">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Adobo Fried Chicken</span>
+                            <span class="menu-item-price">$15.00</span>
                         </div>
-                        <p class="menu-desc">Warm, fluffy traditional Filipino bread rolls infused with sweet purple yam (ube) and a molten sharp cheddar core.</p>
+                        <div class="menu-item-desc">Crispy southern fried chicken marinated in adobo spices, served with side of choice.</div>
+                    </div>
+
+                    <div class="menu-item-wrapper">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Longanisa Burger</span>
+                            <span class="menu-item-price">$13.50</span>
+                        </div>
+                        <div class="menu-item-desc">Sweet Filipino pork sausage patty topped with a fried egg and garlic aioli on a brioche bun.</div>
+                    </div>
+
+                    <div class="menu-item-wrapper">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Halo-Halo Sundae</span>
+                            <span class="menu-item-price">$7.00</span>
+                        </div>
+                        <div class="menu-item-desc">Vanilla ice cream layered with sweet beans, plantains, flan, and crushed ice.</div>
                     </div>
                 </div>
+
             </div>
-        </div>
+        </section>
 
-        <!-- Main Courses / Entrees -->
-        <div class="menu-category">
-            <h3>Mains (Ulam)</h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600" alt="Chicken Adobo Bowl" class="menu-img">
-                    <div class="menu-details">
-                        <div class="menu-header">
-                            <h4>Classic Chicken Adobo</h4>
-                            <span class="price">$18</span>
-                        </div>
-                        <p class="menu-desc">Tender chicken thighs simmered in a savory garlic, cane vinegar, and soy reduction, served over garlic fried rice (sinangag) and a soft-boiled egg.</p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=600" alt="Crispy Pork Belly Sisig" class="menu-img">
-                    <div class="menu-details">
-                        <div class="menu-header">
-                            <h4>Sizzling Pork Belly Sisig</h4>
-                            <span class="price">$20</span>
-                        </div>
-                        <p class="menu-desc">Finely diced crispy pork belly tossed with onions, chili peppers, calamansi juice, and a rich house mayo blend, served on a sizzling hot plate.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Desserts & Drinks -->
-        <div class="menu-category">
-            <h3>Desserts & Refreshments</h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=600" alt="Halo-Halo" class="menu-img">
-                    <div class="menu-details">
-                        <div class="menu-header">
-                            <h4>Delight Halo-Halo</h4>
-                            <span class="price">$12</span>
-                        </div>
-                        <p class="menu-desc">Layered shaved ice with sweet tropical beans, jellies, plantains, flan, ube ice cream, and a generous drizzle of evaporated milk.</p>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=600" alt="Calamansi Iced Tea" class="menu-img">
-                    <div class="menu-details">
-                        <div class="menu-header">
-                            <h4>Calamansi Refresher</h4>
-                            <span class="price">$6</span>
-                        </div>
-                        <p class="menu-desc">Bright, refreshing citrus drink made with freshly squeezed Philippine calamansi limes and lightly sweetened with cane sugar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location Section -->
-    <section id="contact">
-        <div class="section-title">
+        <section id="contact">
             <h2>Visit Us</h2>
-            <p>Come share a meal with our family</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="info-group">
-                    <h4>Location</h4>
-                    <p>123 Island Spice Way<br>New York, NY 10001</p>
+            <div class="info-grid">
+                
+                <div class="info-box">
+                    <h3>Location</h3>
+                    <p><strong>Manila to the Boot</strong></p>
+                    <p>1234 Airline Drive</p>
+                    <p>Bossier City, LA 71112</p>
                 </div>
-                <div class="info-group">
-                    <h4>Hours of Operation</h4>
-                    <p>Tuesday – Thursday: 11:30 AM – 9:00 PM<br>
-                       Friday – Saturday: 11:30 AM – 10:30 PM<br>
-                       Sunday: 12:00 PM – 8:00 PM<br>
-                       Monday: Closed</p>
-                </div>
-                <div class="info-group">
-                    <h4>Reservations & Inquiries</h4>
-                    <p>Phone: (555) 123-4567<br>Email: hello@filipinodelight.net</p>
-                </div>
-            </div>
-            <div class="map-placeholder">
-                Interactive Map / Location View
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
+                <div class="info-box">
+                    <h3>Hours of Operation</h3>
+                    <p><strong>Tuesday – Thursday:</strong> 11:00 AM – 8:00 PM</p>
+                    <p><strong>Friday – Saturday:</strong> 11:00 AM – 9:00 PM</p>
+                    <p><strong>Sunday:</strong> 12:00 PM – 7:00 PM</p>
+                    <p><strong>Monday:</strong> Closed</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Get in Touch</h3>
+                    <p><strong>Phone:</strong> (318) 555-0199</p>
+                    <p><strong>Email:</strong> info@manilatotheboot.com</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #777;">Call ahead for takeout orders!</p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
     <footer>
-        <p>&copy; 2026 Filipino Delight Restaurant. All rights reserved.</p>
-        <p>Crafted with love and authentic Filipino warmth.</p>
+        <p>&copy; 2026 Manila to the Boot. All rights reserved.</p>
     </footer>
 
 </body>
