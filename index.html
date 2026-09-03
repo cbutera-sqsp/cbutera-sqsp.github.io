@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Brass Table | Modern American Bistro</title>
+    <title>Filipino Delight | Modern Filipino-American Cuisine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1c1917;
-            --accent: #b45309;
-            --background: #fafaf9;
-            --card-bg: #ffffff;
-            --text-muted: #78716c;
+            --primary: #c2410c; /* Warm amber-orange inspired by achuete/sunset */
+            --primary-dark: #9a3412;
+            --secondary: #1e293b;
+            --accent: #d97706;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -19,301 +25,477 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--background);
-            color: var(--primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(250, 250, 249, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #e7e5e4;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 5%;
-            z-index: 1000;
+            padding: 1.25rem 5%;
         }
 
         .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
         }
 
         nav a {
-            margin-left: 2rem;
             text-decoration: none;
-            color: var(--primary);
-            font-size: 0.95rem;
+            color: var(--secondary);
             font-weight: 500;
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            transition: var(--transition);
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--primary);
+        }
+
+        .nav-btn {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-dark);
         }
 
         /* Hero Section */
         .hero {
-            height: 80vh;
+            height: 90vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
+            color: var(--white);
             padding: 0 1rem;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            color: #ffffff;
-            margin-top: 60px;
+            margin-top: 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             margin-bottom: 1rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             margin-bottom: 2rem;
+            color: #e2e8f0;
             font-weight: 300;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--accent);
-            color: #ffffff;
-            padding: 0.75rem 2rem;
-            border-radius: 4px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.2s;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px rgba(194, 65, 12, 0.3);
         }
 
         .btn:hover {
-            opacity: 0.9;
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
-        /* Main Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 5rem 1.5rem;
-        }
-
+        /* Sections General */
         section {
-            margin-bottom: 5rem;
+            padding: 6rem 10% 4rem;
         }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 2.5rem;
+        .section-title {
             text-align: center;
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        /* Menu Grid */
-        .menu-category {
             margin-bottom: 3rem;
         }
 
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* About / Story */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            object-fit: cover;
+            height: 400px;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background-color: var(--bg-light);
+        }
+
+        .menu-category {
+            margin-bottom: 4rem;
+        }
+
         .menu-category h3 {
-            font-size: 1.25rem;
-            color: var(--accent);
-            border-bottom: 2px solid #e7e5e4;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            display: inline-block;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .menu-item {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .menu-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .menu-details {
+            padding: 1.5rem;
+        }
+
+        .menu-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 1.25rem;
-        }
-
-        .menu-item-left {
-            flex-grow: 1;
-            padding-right: 2rem;
-        }
-
-        .menu-item-name {
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        .menu-item-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-        }
-
-        .menu-item-price {
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        /* Info Grid (Hours & Location) */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 8px;
-            border: 1px solid #e7e5e4;
-        }
-
-        .info-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .info-box p {
-            color: var(--text-muted);
             margin-bottom: 0.5rem;
+        }
+
+        .menu-header h4 {
+            font-size: 1.25rem;
+            color: var(--secondary);
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .menu-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Contact & Hours */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            padding: 3rem;
+        }
+
+        .info-group {
+            margin-bottom: 2rem;
+        }
+
+        .info-group h4 {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-group p {
+            color: #64748b;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            background: #e2e8f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 500;
         }
 
         /* Footer */
         footer {
+            background-color: var(--secondary);
+            color: #94a3b8;
             text-align: center;
-            padding: 3rem 0;
-            border-top: 1px solid #e7e5e4;
-            color: var(--text-muted);
+            padding: 3rem 5%;
             font-size: 0.9rem;
         }
 
-        @media (max-width: 600px) {
-            nav a {
-                margin-left: 1rem;
-                font-size: 0.85rem;
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Add a mobile menu toggle if needed */
             }
-            .hero {
-                height: 60vh;
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            section {
+                padding: 4rem 5% 2rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header & Navigation -->
     <header>
-        <div class="logo">The Brass Table</div>
+        <a href="#" class="logo">Filipino<span>Delight</span></a>
         <nav>
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
-            <a href="#visit">Visit</a>
+            <ul>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact & Hours</a></li>
+                <li><a href="#contact" class="nav-btn">Reserve a Table</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="hero">
-        <h1>Seasonal Dining & Cocktails</h1>
-        <p>Locally sourced ingredients prepared with classic techniques.</p>
-        <a href="#visit" class="btn">Reserve a Table</a>
-    </div>
+    <!-- Hero Section -->
+    <header class="hero" style="margin-top: 0;"> <!-- overriding top margin for full viewport fit -->
+        <div class="hero-content">
+            <h1>Tradition Meets Modern Flavour</h1>
+            <p>Experience authentic Filipino comfort food elevated with a modern American twist, crafted with heart and heritage.</p>
+            <a href="#menu" class="btn">Explore Our Menu</a>
+        </div>
+    </header>
 
-    <div class="container">
-        
-        <!-- Menu Section -->
-        <section id="menu">
-            <h2>The Menu</h2>
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>A Modern Taste of the Philippines</h3>
+                <p>At Filipino Delight, we bridge generational roots and contemporary dining. Born out of a passion for sharing rich island flavors, our dishes honor timeless traditional recipes while embracing vibrant, modern culinary techniques.</p>
+                <p>From slow-braised adobo reductions to crispy, golden lumpia loaded with gourmet fillings, every plate tells a story of family, warmth, and community.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=800" alt="Fresh modern dishes plating">
+            </div>
+        </div>
+    </section>
 
-            <div class="menu-category">
-                <h3>Small Plates</h3>
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="section-title">
+            <h2>Our Signature Menu</h2>
+            <p>Carefully curated dishes blending classic island heritage with local favorites</p>
+        </div>
+
+        <!-- Starters / Pica-Pica -->
+        <div class="menu-category">
+            <h3>Pica-Pica (Starters)</h3>
+            <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="menu-item-left">
-                        <div class="menu-item-name">Charred Shishito Peppers</div>
-                        <div class="menu-item-desc">Maldon sea salt, charred lemon, garlic aioli</div>
+                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&q=80&w=600" alt="Crispy Lumpia" class="menu-img">
+                    <div class="menu-details">
+                        <div class="menu-header">
+                            <h4>Signature Pork Lumpia</h4>
+                            <span class="price">$10</span>
+                        </div>
+                        <p class="menu-desc">Crispy golden spring rolls packed with seasoned ground pork, water chestnuts, and carrots, served with sweet chili dipping sauce.</p>
                     </div>
-                    <div class="menu-item-price">$14</div>
                 </div>
+
                 <div class="menu-item">
-                    <div class="menu-item-left">
-                        <div class="menu-item-name">Handmade Ricotta Gnocchi</div>
-                        <div class="menu-item-desc">Wild mushrooms, brown butter, aged parmesan</div>
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600" alt="Ube Cheese Pandesal" class="menu-img">
+                    <div class="menu-details">
+                        <div class="menu-header">
+                            <h4>Ube Cheese Pandesal</h4>
+                            <span class="price">$8</span>
+                        </div>
+                        <p class="menu-desc">Warm, fluffy traditional Filipino bread rolls infused with sweet purple yam (ube) and a molten sharp cheddar core.</p>
                     </div>
-                    <div class="menu-item-price">$18</div>
                 </div>
             </div>
+        </div>
 
-            <div class="menu-category">
-                <h3>Mains</h3>
+        <!-- Main Courses / Entrees -->
+        <div class="menu-category">
+            <h3>Mains (Ulam)</h3>
+            <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="menu-item-left">
-                        <div class="menu-item-name">Pan-Seared Local Catch</div>
-                        <div class="menu-item-desc">Sunchoke puree, blistered tomatoes, herb oil</div>
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600" alt="Chicken Adobo Bowl" class="menu-img">
+                    <div class="menu-details">
+                        <div class="menu-header">
+                            <h4>Classic Chicken Adobo</h4>
+                            <span class="price">$18</span>
+                        </div>
+                        <p class="menu-desc">Tender chicken thighs simmered in a savory garlic, cane vinegar, and soy reduction, served over garlic fried rice (sinangag) and a soft-boiled egg.</p>
                     </div>
-                    <div class="menu-item-price">$34</div>
                 </div>
+
                 <div class="menu-item">
-                    <div class="menu-item-left">
-                        <div class="menu-item-name">Dry-Aged Bavette Steak</div>
-                        <div class="menu-item-desc">Crispy fingerling potatoes, bone marrow jus, watercress</div>
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=600" alt="Crispy Pork Belly Sisig" class="menu-img">
+                    <div class="menu-details">
+                        <div class="menu-header">
+                            <h4>Sizzling Pork Belly Sisig</h4>
+                            <span class="price">$20</span>
+                        </div>
+                        <p class="menu-desc">Finely diced crispy pork belly tossed with onions, chili peppers, calamansi juice, and a rich house mayo blend, served on a sizzling hot plate.</p>
                     </div>
-                    <div class="menu-item-price">$38</div>
                 </div>
             </div>
+        </div>
 
-            <div class="menu-category">
-                <h3>Sweets</h3>
+        <!-- Desserts & Drinks -->
+        <div class="menu-category">
+            <h3>Desserts & Refreshments</h3>
+            <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="menu-item-left">
-                        <div class="menu-item-name">Dark Chocolate Budino</div>
-                        <div class="menu-item-desc">Sea salt caramel, cocoa nib shortbread</div>
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=600" alt="Halo-Halo" class="menu-img">
+                    <div class="menu-details">
+                        <div class="menu-header">
+                            <h4>Delight Halo-Halo</h4>
+                            <span class="price">$12</span>
+                        </div>
+                        <p class="menu-desc">Layered shaved ice with sweet tropical beans, jellies, plantains, flan, ube ice cream, and a generous drizzle of evaporated milk.</p>
                     </div>
-                    <div class="menu-item-price">$12</div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=600" alt="Calamansi Iced Tea" class="menu-img">
+                    <div class="menu-details">
+                        <div class="menu-header">
+                            <h4>Calamansi Refresher</h4>
+                            <span class="price">$6</span>
+                        </div>
+                        <p class="menu-desc">Bright, refreshing citrus drink made with freshly squeezed Philippine calamansi limes and lightly sweetened with cane sugar.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>Our Approach</h2>
-            <p style="text-align: center; max-width: 650px; margin: 0 auto; color: var(--text-muted);">
-                Founded with a commitment to simplicity and craftsmanship, The Brass Table focuses on honest food that highlights regional agriculture. Our rotating menu adapts to the harvest, ensuring peak flavor in every dish.
-            </p>
-        </section>
-
-        <!-- Visit / Hours Section -->
-        <section id="visit">
-            <h2>Hours & Location</h2>
-            <div class="info-grid">
-                <div class="info-box">
-                    <h3>Hours</h3>
-                    <p><strong>Tuesday – Thursday:</strong> 5:00 PM – 10:00 PM</p>
-                    <p><strong>Friday – Saturday:</strong> 5:00 PM – 11:00 PM</p>
-                    <p><strong>Sunday – Monday:</strong> Closed</p>
+    <!-- Contact & Location Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Visit Us</h2>
+            <p>Come share a meal with our family</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-group">
+                    <h4>Location</h4>
+                    <p>123 Island Spice Way<br>New York, NY 10001</p>
                 </div>
-                <div class="info-box">
-                    <h3>Contact & Location</h3>
-                    <p>124 Grand Street</p>
-                    <p>New York, NY 10013</p>
-                    <p style="margin-top: 1rem;">info@thebrasstable.com</p>
-                    <p>(212) 555-0198</p>
+                <div class="info-group">
+                    <h4>Hours of Operation</h4>
+                    <p>Tuesday – Thursday: 11:30 AM – 9:00 PM<br>
+                       Friday – Saturday: 11:30 AM – 10:30 PM<br>
+                       Sunday: 12:00 PM – 8:00 PM<br>
+                       Monday: Closed</p>
+                </div>
+                <div class="info-group">
+                    <h4>Reservations & Inquiries</h4>
+                    <p>Phone: (555) 123-4567<br>Email: hello@filipinodelight.net</p>
                 </div>
             </div>
-        </section>
+            <div class="map-placeholder">
+                Interactive Map / Location View
+            </div>
+        </div>
+    </section>
 
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 The Brass Table. All rights reserved.</p>
+        <p>&copy; 2026 Filipino Delight Restaurant. All rights reserved.</p>
+        <p>Crafted with love and authentic Filipino warmth.</p>
     </footer>
 
 </body>
