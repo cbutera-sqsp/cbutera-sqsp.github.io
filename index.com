@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filipino Delight | Authentic Filipino Cuisine</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#E5A93C',
+                            sun: '#FFB703',
+                            red: '#A31D1D',
+                            darkred: '#7A0C0C',
+                            cream: '#FFFDF7',
+                            wood: '#2C1810',
+                            warmgray: '#F5F2EB'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(44, 24, 16, 0.82), rgba(122, 12, 12, 0.85)), 
+                        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80') center/cover no-repeat;
+        }
+        .wood-pattern {
+            background-color: #FFFDF7;
+            background-image: radial-gradient(#E5A93C 0.5px, transparent 0.5px), radial-gradient(#E5A93C 0.5px, #FFFDF7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0,10px 10px;
+            background-opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-stone-800 font-sans antialiased selection:bg-brand-sun selection:text-brand-darkred">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-brand-wood text-brand-cream shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-brand-sun flex items-center justify-center text-brand-darkred text-xl font-bold shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold text-lg">☀️</i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold text-brand-sun tracking-wide block leading-tight">Filipino Delight</span>
+                        <span class="text-xs text-amber-200 tracking-widest uppercase">Authentic Home-Style Cooking</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#home" class="hover:text-brand-sun transition-colors">Home</a>
+                    <a href="#combos" class="hover:text-brand-sun transition-colors">Combo Meals</a>
+                    <a href="#menu" class="hover:text-brand-sun transition-colors">Full Menu</a>
+                    <a href="#location" class="hover:text-brand-sun transition-colors">Hours & Location</a>
+                    <a href="#contact" class="hover:text-brand-sun transition-colors">Contact</a>
+                    <a href="tel:3185550199" class="bg-brand-red hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-semibold shadow-md transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-phone mr-2"></i>(318) 555-0199
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-amber-200 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-b border-stone-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-stone-800 hover:text-brand-sun">Home</a>
+            <a href="#combos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-stone-800 hover:text-brand-sun">Combo Meals</a>
+            <a href="#menu" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-stone-800 hover:text-brand-sun">Full Menu</a>
+            <a href="#location" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-stone-800 hover:text-brand-sun">Hours & Location</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-stone-800 hover:text-brand-sun">Contact</a>
+            <a href="tel:3185550199" class="block w-full text-center bg-brand-red text-white py-3 rounded-lg font-semibold mt-4">
+                <i class="fa-solid fa-phone mr-2"></i>Call (318) 555-0199
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-24 lg:py-32 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <span class="inline-block bg-brand-sun/20 text-brand-sun border border-brand-sun/40 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
+                Taste the Tradition of Manila in Bossier City
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+                Authentic & Delicious <br><span class="text-brand-sun italic">Filipino Comfort Food</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-stone-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Experience warm hospitality and traditional home-style cooking. From sizzling Sisig to sweet Halo-Halo, every dish is crafted with passion.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#menu" class="w-full sm:w-auto bg-brand-sun hover:bg-amber-400 text-brand-wood px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-amber-500/20 transition-all transform hover:-translate-y-0.5">
+                    Explore Menu
+                </a>
+                <a href="#location" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md px-8 py-4 rounded-full font-semibold text-lg transition-all">
+                    Visit Us Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combos Highlight Banner -->
+    <section id="combos" class="py-16 bg-gradient-to-b from-brand-darkred to-brand-red text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3 text-brand-sun">Value Combo Meals</h2>
+                <p class="text-amber-100 max-w-xl mx-auto">Complete your meal with your favorite entrees and side choices!</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Combo 1 -->
+                <div class="bg-brand-wood/90 border border-amber-500/30 rounded-2xl p-6 relative flex flex-col justify-between shadow-xl transform hover:-translate-y-1 transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold font-serif text-brand-sun">Combo 1</h3>
+                            <span class="bg-brand-sun text-brand-wood text-xl font-bold px-3 py-1 rounded-full">$8.99</span>
+                        </div>
+                        <p class="text-amber-200 text-lg font-medium mb-2">1 Meat + 1 Side</p>
+                        <p class="text-stone-300 text-sm mb-4">Pick any 1 main dish item accompanied by your choice of rice or pancit.</p>
+                    </div>
+                    <div class="text-xs text-amber-300/80 italic border-t border-white/10 pt-3">
+                        Popular Choice: Pork Adobo + Garlic Fried Rice
+                    </div>
+                </div>
+
+                <!-- Combo 2 -->
+                <div class="bg-brand-wood/90 border-2 border-brand-sun rounded-2xl p-6 relative flex flex-col justify-between shadow-2xl transform hover:-translate-y-1 transition-all">
+                    <div class="absolute -top-3.5 right-6 bg-brand-sun text-brand-wood text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                        Most Popular
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold font-serif text-brand-sun">Combo 2</h3>
+                            <span class="bg-brand-sun text-brand-wood text-xl font-bold px-3 py-1 rounded-full">$13.00</span>
+                        </div>
+                        <p class="text-amber-200 text-lg font-medium mb-2">2 Meats + 1 Side</p>
+                        <p class="text-stone-300 text-sm mb-4">Twice the flavor! Mix and match two entrees with a hearty side.</p>
+                    </div>
+                    <div class="text-xs text-amber-300/80 italic border-t border-white/10 pt-3">
+                        Popular Choice: Menudo & Sisig + Pancit Bihon
+                    </div>
+                </div>
+
+                <!-- Combo 3 -->
+                <div class="bg-brand-wood/90 border border-amber-500/30 rounded-2xl p-6 relative flex flex-col justify-between shadow-xl transform hover:-translate-y-1 transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold font-serif text-brand-sun">Combo 3</h3>
+                            <span class="bg-brand-sun text-brand-wood text-xl font-bold px-3 py-1 rounded-full">$17.00</span>
+                        </div>
+                        <p class="text-amber-200 text-lg font-medium mb-2">3 Meats + 1 Side</p>
+                        <p class="text-stone-300 text-sm mb-4">Ultimate feast for big appetites. Select 3 entrees with a full side portion.</p>
+                    </div>
+                    <div class="text-xs text-amber-300/80 italic border-t border-white/10 pt-3">
+                        Side Options: Sinangag (Garlic Rice) OR Pancit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Menu Section -->
+    <section id="menu" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-brand-darkred mb-4">Our Delicious Menu</h2>
+            <p class="text-stone-600 max-w-2xl mx-auto">Freshly prepared daily with authentic seasonings and traditional recipes.</p>
+            
+            <!-- Search Bar -->
+            <div class="mt-8 max-w-md mx-auto relative">
+                <input type="text" id="menu-search" placeholder="Search menu items (e.g. Adobo, Lumpia, Halo-Halo)..." 
+                       class="w-full pl-11 pr-4 py-3 rounded-full border border-stone-300 focus:outline-none focus:ring-2 focus:ring-brand-red/50 shadow-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-stone-400"></i>
+            </div>
+        </div>
+
+        <!-- Menu Tabs / Filters -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12" id="category-tabs">
+            <button class="tab-btn active bg-brand-red text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-sm" data-category="all">All Items</button>
+            <button class="tab-btn bg-stone-200 text-stone-700 hover:bg-stone-300 px-5 py-2.5 rounded-full font-medium text-sm transition-all" data-category="appetizers">Appetizers & A La Carte</button>
+            <button class="tab-btn bg-stone-200 text-stone-700 hover:bg-stone-300 px-5 py-2.5 rounded-full font-medium text-sm transition-all" data-category="silog">Silog Plates</button>
+            <button class="tab-btn bg-stone-200 text-stone-700 hover:bg-stone-300 px-5 py-2.5 rounded-full font-medium text-sm transition-all" data-category="mains">Main Dishes</button>
+            <button class="tab-btn bg-stone-200 text-stone-700 hover:bg-stone-300 px-5 py-2.5 rounded-full font-medium text-sm transition-all" data-category="sides">Sides</button>
+            <button class="tab-btn bg-stone-200 text-stone-700 hover:bg-stone-300 px-5 py-2.5 rounded-full font-medium text-sm transition-all" data-category="desserts">Desserts</button>
+            <button class="tab-btn bg-stone-200 text-stone-700 hover:bg-stone-300 px-5 py-2.5 rounded-full font-medium text-sm transition-all" data-category="drinks">Drinks</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-grid">
+            
+            <!-- Appetizers -->
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="appetizers">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Shrimp Egg Rolls</h3>
+                        <span class="text-brand-red font-bold text-lg">$5.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">10 Pieces</p>
+                    <p class="text-stone-600 text-sm">Crispy golden lumpia wrapped and filled with seasoned shrimp.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="appetizers">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Chicken / Pork Egg Rolls</h3>
+                        <span class="text-brand-red font-bold text-lg">$5.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">6 Pieces</p>
+                    <p class="text-stone-600 text-sm">Classic Filipino fried lumpia with savory savory minced meat filling.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="appetizers">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Vegetable Egg Rolls</h3>
+                        <span class="text-brand-red font-bold text-lg">$5.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">3 Pieces</p>
+                    <p class="text-stone-600 text-sm">Crispy fried vegetable lumpia packed with fresh mix of garden vegetables.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="appetizers">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Ukoy</h3>
+                        <span class="text-brand-red font-bold text-lg">$2.50</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Crispy shrimp and vegetable fritters served with dipping sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="appetizers">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Dumplings</h3>
+                        <span class="text-brand-red font-bold text-lg">$5.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">6 Pieces</p>
+                    <p class="text-stone-600 text-sm">Deliciously seasoned steamed/fried pork dumplings.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="appetizers">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Tokwa 't Baboy</h3>
+                        <span class="text-brand-red font-bold text-lg">$7.99</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Fried tofu and boiled pork slices in a tangy soy-vinegar sauce with onions.</p>
+                </div>
+            </div>
+
+            <!-- Silog Meals -->
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="silog">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Bangsilog</h3>
+                        <span class="text-brand-red font-bold text-lg">$10.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Breakfast Favorite</p>
+                    <p class="text-stone-600 text-sm">Pan-fried boneless milkfish (Bangus), garlic fried rice, and fried egg.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="silog">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Tosilog</h3>
+                        <span class="text-brand-red font-bold text-lg">$10.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Breakfast Favorite</p>
+                    <p class="text-stone-600 text-sm">Sweet cured pork tocino served with garlic fried rice and a fried egg.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="silog">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Cornsilog</h3>
+                        <span class="text-brand-red font-bold text-lg">$10.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Breakfast Favorite</p>
+                    <p class="text-stone-600 text-sm">Sautéed corned beef with onions, garlic fried rice, and a fried egg.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="silog">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Hotsilog</h3>
+                        <span class="text-brand-red font-bold text-lg">$10.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Breakfast Favorite</p>
+                    <p class="text-stone-600 text-sm">Red Filipino hotdog served with garlic fried rice and a sunny-side egg.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="silog">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Spamsilog</h3>
+                        <span class="text-brand-red font-bold text-lg">$10.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Breakfast Favorite</p>
+                    <p class="text-stone-600 text-sm">Seared Spam slices accompanied by garlic fried rice and a fried egg.</p>
+                </div>
+            </div>
+
+            <!-- Main Dishes -->
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Chicken / Pork Adobo</h3>
+                    <p class="text-stone-600 text-sm">Chicken and pork pieces simmered in a dark, garlic-soy, and vinegar sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Pork / Chicken Sisig</h3>
+                    <p class="text-stone-600 text-sm">Sizzling, chopped pork and chicken, onions, and chilies.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Menudo</h3>
+                    <p class="text-stone-600 text-sm">Hearty pork cubes and liver stew with potatoes, carrots, and bell peppers in tomato sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Kare-Kare</h3>
+                    <p class="text-stone-600 text-sm">Rich beef and tender vegetables stewed in thick savory peanut sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Kaldereta</h3>
+                    <p class="text-stone-600 text-sm">Rich and savory tender beef stew with vegetables in tomato sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Sinigang na Baboy</h3>
+                    <p class="text-stone-600 text-sm">Tamarind-soured pork soup made with mixed vegetables.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Sinigang na Hipon</h3>
+                    <p class="text-stone-600 text-sm">Tamarind-soured shrimp soup with kangkong, gabi, siling haba, and mixed vegetables.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Pork / Chicken Barbeque</h3>
+                    <p class="text-stone-600 text-sm">Grilled, skewered pork caramelized with sweet and savory glaze.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Bistek</h3>
+                    <p class="text-stone-600 text-sm">Tender, pan-fried beef steak marinated in citrus and soy sauce topped with onion rings.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Dinuguan</h3>
+                    <p class="text-stone-600 text-sm">Dark, savory pork stew simmered in a rich garlic vinegar sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Chicken Tinola</h3>
+                    <p class="text-stone-600 text-sm">Comforting chicken soup with ginger, papaya, and leafy greens.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Chicken Afritada</h3>
+                    <p class="text-stone-600 text-sm">Chicken pieces, potatoes, carrots, and bell peppers in savory tomato sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Pinakbet</h3>
+                    <p class="text-stone-600 text-sm">A vibrant stir-fry of mixed vegetables seasoned with savory shrimp paste.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Chopsuey</h3>
+                    <p class="text-stone-600 text-sm">A colorful stir-fry of fresh mixed vegetables with shrimp and chicken.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Nilagang Baka</h3>
+                    <p class="text-stone-600 text-sm">Beef shank broth soup with tender meat, potatoes, cabbage, and corn.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Mongo</h3>
+                    <p class="text-stone-600 text-sm">Savory mung bean soup garnished with pork and nutrient-dense malunggay leaves.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Igado</h3>
+                    <p class="text-stone-600 text-sm">Sautéed pork strips with green peas and red bell peppers.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="mains">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Pepper Steak</h3>
+                    <p class="text-stone-600 text-sm">Tender beef slices sautéed with onions and bell peppers in a rich pepper sauce.</p>
+                </div>
+            </div>
+
+            <!-- Sides -->
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="sides">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Garlic Fried Rice</h3>
+                    <p class="text-stone-600 text-sm">Aromatic stir-fried rice loaded with toasted garlic bits.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="sides">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Steamed Rice</h3>
+                    <p class="text-stone-600 text-sm">Classic white jasmine steamed rice.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="sides">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Pancit Bihon</h3>
+                    <p class="text-stone-600 text-sm">Stir-fried thin rice noodles with vegetables and savory seasonings.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="sides">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-stone-800 mb-2">Pancit Canton</h3>
+                    <p class="text-stone-600 text-sm">Savory stir-fried egg noodles with vegetables and meats.</p>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="desserts">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Turon</h3>
+                        <span class="text-brand-red font-bold text-lg">$1.50</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Per Piece</p>
+                    <p class="text-stone-600 text-sm">Crispy deep-fried banana rolls glazed with caramelized brown sugar.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="desserts">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Bibingka</h3>
+                        <span class="text-brand-red font-bold text-lg">$2.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Per Slice</p>
+                    <p class="text-stone-600 text-sm">Traditional baked coconut rice cake.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="desserts">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Cassava Cake</h3>
+                        <span class="text-brand-red font-bold text-lg">$2.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Per Slice</p>
+                    <p class="text-stone-600 text-sm">Moist, soft cassava cake topped with a rich custard layer.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="desserts">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Biko</h3>
+                        <span class="text-brand-red font-bold text-lg">$2.00</span>
+                    </div>
+                    <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Per Slice</p>
+                    <p class="text-stone-600 text-sm">Sweet glutinous rice cake topped with caramelized coconut cream (latik).</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="desserts">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Ginataang Bilo-bilo</h3>
+                        <span class="text-brand-red font-bold text-lg">$5.99</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Warm sweet coconut milk dessert soup with chewy glutinous rice balls and tapioca.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="desserts">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Halo-halo</h3>
+                        <span class="text-brand-red font-bold text-lg">$8.99</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">The iconic Filipino shaved ice dessert loaded with sweet beans, leche flan, ube, and milk.</p>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="drinks">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Sago 't Gulaman</h3>
+                        <span class="text-brand-red font-bold text-lg">$3.00</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Refreshment with chewy tapioca pearls and grass jelly in sweet brown sugar syrup.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="drinks">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Sweet / Unsweetened Tea</h3>
+                        <span class="text-brand-red font-bold text-lg">$1.99</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Brewed iced tea, sweetened with sugar or served crisp and unsweetened.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="drinks">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Lemonade</h3>
+                        <span class="text-brand-red font-bold text-lg">$1.99</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Refreshing freshly squeezed lemonade with the perfect tart-sweet balance.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="drinks">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Arnold Palmer</h3>
+                        <span class="text-brand-red font-bold text-lg">$1.99</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Delightful blend of iced tea and lemonade.</p>
+                </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-2xl shadow-md border border-stone-100 flex flex-col justify-between" data-category="drinks">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif font-bold text-xl text-stone-800">Bottled Water</h3>
+                        <span class="text-brand-red font-bold text-lg">$0.50</span>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-2">Chilled bottle of pure mineral water.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location & Hours Section -->
+    <section id="location" class="py-20 bg-brand-warmgray border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Information -->
+                <div>
+                    <span class="text-brand-red font-bold tracking-wider uppercase text-sm">Find Us</span>
+                    <h2 class="font-serif text-4xl font-bold text-stone-800 mb-6 mt-1">Hours & Location</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Address -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand-red/10 text-brand-red rounded-xl flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-800 text-lg">Address</h3>
+                                <p class="text-stone-600">1234 Airline Drive<br>Bossier City, LA 71112</p>
+                                <a href="https://maps.google.com/?q=1234+Airline+Drive,+Bossier+City,+LA+71112" target="_blank" class="inline-block mt-2 text-sm font-semibold text-brand-red hover:underline">
+                                    Get Directions &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand-gold/20 text-brand-wood rounded-xl flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-800 text-lg">Hours of Operation</h3>
+                                <div class="mt-1 text-stone-600 space-y-1">
+                                    <p><span class="font-medium text-stone-800 w-28 inline-block">Monday:</span> <span class="text-red-600 font-medium">Closed</span></p>
+                                    <p><span class="font-medium text-stone-800 w-28 inline-block">Tue – Sun:</span> 11:00 AM – 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Quick Links -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand-red/10 text-brand-red rounded-xl flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-800 text-lg">Call or Email</h3>
+                                <p class="text-stone-600">(318) 555-0199</p>
+                                <p class="text-stone-600">info@manilatotheboot.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Frame -->
+                <div class="h-96 rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+                    <iframe 
+                        title="Restaurant Location Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3372.501980894568!2d-93.70889!3d32.53232!2m3!10f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8636cd4f2d506d87%3A0x1b46a36f56b7c2!2sAirline%20Dr%2C%20Bossier%20City%2C%20LA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-brand-wood text-stone-300 py-12 border-t border-amber-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-brand-sun mb-3">Filipino Delight</h3>
+                    <p class="text-sm text-stone-400">Serving authentic, delicious home-style Filipino food in Louisiana. Come dine with us today!</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-3">Quick Contact</h4>
+                    <p class="text-sm"><i class="fa-solid fa-phone text-brand-sun mr-2"></i>(318) 555-0199</p>
+                    <p class="text-sm mt-1"><i class="fa-solid fa-envelope text-brand-sun mr-2"></i>info@manilatotheboot.com</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-3">Location</h4>
+                    <p class="text-sm">1234 Airline Drive</p>
+                    <p class="text-sm">Bossier City, LA 71112</p>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500">
+                <p>&copy; <span id="year"></span> Filipino Delight. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0">Hosted on GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filter Menu Categories
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all tabs
+                tabBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-brand-red', 'text-white');
+                    b.classList.add('bg-stone-200', 'text-stone-700');
+                });
+
+                // Add active state to clicked button
+                btn.classList.add('active', 'bg-brand-red', 'text-white');
+                btn.classList.remove('bg-stone-200', 'text-stone-700');
+
+                const selectedCategory = btn.getAttribute('data-category');
+
+                menuItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (selectedCategory === 'all' || selectedCategory === itemCategory) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search Bar Functionality
+        const searchInput = document.getElementById('menu-search');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            menuItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const description = item.querySelector('p') ? item.querySelector('p').textContent.toLowerCase() : '';
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
